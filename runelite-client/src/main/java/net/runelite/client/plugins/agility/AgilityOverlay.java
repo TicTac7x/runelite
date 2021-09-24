@@ -33,10 +33,9 @@ import java.awt.Shape;
 import java.util.List;
 import java.util.Set;
 import javax.inject.Inject;
-import net.runelite.api.Client;
-import net.runelite.api.NPC;
-import net.runelite.api.Point;
-import net.runelite.api.Tile;
+
+import com.google.common.collect.ImmutableSet;
+import net.runelite.api.*;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.client.game.AgilityShortcut;
 import net.runelite.client.ui.overlay.Overlay;
@@ -49,6 +48,38 @@ class AgilityOverlay extends Overlay
 {
 	private static final int MAX_DISTANCE = 2350;
 	private static final Color SHORTCUT_HIGH_LEVEL_COLOR = Color.ORANGE;
+
+	private static final Set<Integer> AGILITY_ANIMATIONS = ImmutableSet.of(
+			AnimationID.AGILITY_CROSS_TIGHTROPE,
+			AnimationID.AGILITY_SLIDE_TIGHTROPE,
+			AnimationID.AGILITY_CROSS_HAND_HOLDS_START,
+			AnimationID.AGILITY_CROSS_HAND_HOLDS_END,
+			AnimationID.AGILITY_CLIMB_WALL,
+			AnimationID.AGILITY_CLIMB_UP_WALL_START,
+			AnimationID.AGILITY_CLIMB_UP_WALL_END,
+			AnimationID.AGILITY_CLIMB_TREE,
+			AnimationID.AGILITY_BALANCE_START,
+			AnimationID.AGILITY_BALANCE_END,
+			AnimationID.AGILITY_JUMP_UP,
+			AnimationID.AGILITY_JUMP_DOWN_START,
+			AnimationID.AGILITY_JUMP_DOWN_END,
+			AnimationID.AGILITY_CABLE_SWING_ACROSS_START,
+			AnimationID.AGILITY_CABLE_SWING_ACROSS_END,
+			AnimationID.AGILITY_SWING_ACROSS_START,
+			AnimationID.AGILITY_SWING_ACROSS_MID,
+			AnimationID.AGILITY_SWING_ACROSS_END,
+			AnimationID.AGILITY_TEETH_GRIP_START,
+			AnimationID.AGILITY_TEETH_GRIP_MID,
+			AnimationID.AGILITY_TEETH_GRIP_END,
+			AnimationID.AGILITY_HURDLE,
+			AnimationID.AGILITY_LEAP,
+			AnimationID.AGILITY_VAULT
+	);
+	private static final Set<Integer> AGILITY_ANIMATIONS_POSE = ImmutableSet.of(
+			AnimationPoseID.AGILITY_CROSS_TIGHTROPE,
+			AnimationPoseID.AGILITY_BALANCE_START,
+			AnimationPoseID.AGILITY_BALANCE_END
+	);
 
 	private final Client client;
 	private final AgilityPlugin plugin;
@@ -118,6 +149,11 @@ class AgilityOverlay extends Overlay
 						{
 							return;
 						}
+					}
+
+					if (AGILITY_ANIMATIONS_POSE.contains(client.getLocalPlayer().getPoseAnimation()) || AGILITY_ANIMATIONS.contains(client.getLocalPlayer().getAnimation()))
+					{
+						configColor = Color.ORANGE;
 					}
 
 					if (objectClickbox.contains(mousePosition.getX(), mousePosition.getY()))
