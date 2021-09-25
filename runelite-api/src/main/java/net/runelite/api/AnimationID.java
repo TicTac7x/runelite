@@ -34,6 +34,9 @@ public final class AnimationID
 {
 	public static final int IDLE = -1;
 	public static final int AGILITY_CROSS_TIGHTROPE = 741;
+	public static final int AGILITY_SLIDE_ZIPLINE = 742;
+	public static final int AGILITY_CLIMB_MONKEYBARS_START = 742;
+	public static final int AGILITY_CLIMB_MONKEYBARS_END = 743;
 	public static final int AGILITY_SQUEEZE_TROUGH = 749;
 	public static final int AGILITY_SLIDE_TIGHTROPE = 7134;
 	public static final int AGILITY_CROSS_HAND_HOLDS_START = 1188;
@@ -47,6 +50,7 @@ public final class AnimationID
 	public static final int AGILITY_JUMP_UP = 2585;
 	public static final int AGILITY_JUMP_DOWN_START = 2586;
 	public static final int AGILITY_JUMP_DOWN_END = 2588;
+	public static final int AGILITY_JUMP_STEP_BACK = 820;
 	public static final int AGILITY_CABLE_SWING_ACROSS_START = 1995;
 	public static final int AGILITY_CABLE_SWING_ACROSS_END = 751;
 	public static final int AGILITY_SWING_ACROSS_START = 1122;
@@ -58,6 +62,7 @@ public final class AnimationID
 	public static final int AGILITY_HURDLE = 1603;
 	public static final int AGILITY_LEAP = 4789;
 	public static final int AGILITY_VAULT = 7132;
+	public static final int AGILITY_GRAPPLE = 6067;
 
 
 	public static final int HERBLORE_PESTLE_AND_MORTAR = 364;

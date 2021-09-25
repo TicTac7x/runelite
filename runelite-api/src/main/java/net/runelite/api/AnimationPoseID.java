@@ -33,6 +33,8 @@ package net.runelite.api;
 public final class AnimationPoseID
 {
 	public static final int IDLE = 813;
+	public static final int AGILITY_CLIMB_MONKEYBARS_START = 745;
+	public static final int AGILITY_CLIMB_MONKEYBARS_END = 744;
 	public static final int AGILITY_CROSS_TIGHTROPE = 762;
 	public static final int AGILITY_BALANCE_START = 756;
 	public static final int AGILITY_BALANCE_END = 757;
