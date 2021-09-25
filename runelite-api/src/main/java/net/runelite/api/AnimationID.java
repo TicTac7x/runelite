@@ -34,6 +34,7 @@ public final class AnimationID
 {
 	public static final int IDLE = -1;
 	public static final int AGILITY_CROSS_TIGHTROPE = 741;
+	public static final int AGILITY_SQUEEZE_TROUGH = 749;
 	public static final int AGILITY_SLIDE_TIGHTROPE = 7134;
 	public static final int AGILITY_CROSS_HAND_HOLDS_START = 1188;
 	public static final int AGILITY_CROSS_HAND_HOLDS_END = 1120;
